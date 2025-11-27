@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.14.0 on win32)" generated="2025-11-27T15:01:58.556073" rpa="false" schemaversion="5">
+<suite id="s1" name="Test" source="C:\Users\Aarushi\Desktop\Automation\OpenCart\tests\test.robot">
+<test id="s1-t1" name="Click Each Product And Add To Cart" line="9">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:01:58.883202" level="INFO">Opening browser 'chrome' to base url 'https://opencart.abstracta.us/index.php?route=common/home'.</msg>
+<arg>https://opencart.abstracta.us/index.php?route=common/home</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-27T15:01:58.882877" elapsed="5.160051"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-27T15:02:04.043615" elapsed="0.036952"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PRODUCT_CARD_LINKS}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-27T15:02:04.081051" elapsed="0.017497"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:02:04.122271" level="INFO">${links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2f26f945b9f66153b36f4972cc204df7", element="f.83DC0B7DA85A5C8BCCD0F0C31B07434D.d.EB5C813B738D2E409D6EA9D7C2E43C06.e.78")&gt;, &lt;selenium.webdriv...</msg>
+<var>${links}</var>
+<arg>${PRODUCT_CARD_LINKS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-27T15:02:04.100288" elapsed="0.022082"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${link}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-11-27T15:02:04.123334" elapsed="0.284280"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:02:04.408310" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2f26f945b9f66153b36f4972cc204df7", element="f.83DC0B7DA85A5C8BCCD0F0C31B07434D.d.EB5C813B738D2E409D6EA9D7C2E43C06.e.78")&gt;'.</msg>
+<arg>${link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-27T15:02:04.407901" elapsed="1.777144"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-27T15:02:07.186070" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-27T15:02:06.185368" elapsed="1.000860"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-11-27T15:02:07.186457" elapsed="0.285313"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-27T15:02:07.472004" elapsed="0.017438"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:02:07.489983" level="INFO">Clicking element 'xpath=//button[@id='button-cart']'.</msg>
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-27T15:02:07.489680" elapsed="0.056018"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-27T15:02:08.546632" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-27T15:02:07.545997" elapsed="1.000805"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-11-27T15:02:08.547041" elapsed="0.021696"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PRODUCT_CARD_LINKS}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-27T15:02:08.569122" elapsed="0.015278"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:02:08.594945" level="INFO">${links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2f26f945b9f66153b36f4972cc204df7", element="f.83DC0B7DA85A5C8BCCD0F0C31B07434D.d.EB5C813B738D2E409D6EA9D7C2E43C06.e.78")&gt;, &lt;selenium.webdriv...</msg>
+<var>${links}</var>
+<arg>${PRODUCT_CARD_LINKS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-27T15:02:08.584640" elapsed="0.010378"/>
+</kw>
+<var name="${link}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f26f945b9f66153b36f4972cc204df7", element="f.83DC0B7DA85A5C8BCCD0F0C31B07434D.d.EB5C813B738D2E409D6EA9D7C2E43C06.e.78")&gt;</var>
+<status status="PASS" start="2025-11-27T15:02:04.123153" elapsed="4.471968"/>
+</iter>
+<iter>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${link}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-11-27T15:02:08.595570" elapsed="0.309159"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:02:08.905272" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2f26f945b9f66153b36f4972cc204df7", element="f.83DC0B7DA85A5C8BCCD0F0C31B07434D.d.EB5C813B738D2E409D6EA9D7C2E43C06.e.79")&gt;'.</msg>
+<arg>${link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-27T15:02:08.904964" elapsed="0.693032"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-27T15:02:10.598964" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-27T15:02:09.598226" elapsed="1.000905"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-11-27T15:02:10.599366" elapsed="0.267623"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-27T15:02:10.867229" elapsed="0.013785"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:02:10.881776" level="INFO">Clicking element 'xpath=//button[@id='button-cart']'.</msg>
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-27T15:02:10.881309" elapsed="0.054553"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-27T15:02:11.937131" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-27T15:02:10.936098" elapsed="1.001191"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-11-27T15:02:11.937502" elapsed="0.022452"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PRODUCT_CARD_LINKS}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-27T15:02:11.960203" elapsed="0.012646"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:02:11.982040" level="INFO">${links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2f26f945b9f66153b36f4972cc204df7", element="f.83DC0B7DA85A5C8BCCD0F0C31B07434D.d.EB5C813B738D2E409D6EA9D7C2E43C06.e.78")&gt;, &lt;selenium.webdriv...</msg>
+<var>${links}</var>
+<arg>${PRODUCT_CARD_LINKS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-27T15:02:11.973235" elapsed="0.008883"/>
+</kw>
+<var name="${link}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f26f945b9f66153b36f4972cc204df7", element="f.83DC0B7DA85A5C8BCCD0F0C31B07434D.d.EB5C813B738D2E409D6EA9D7C2E43C06.e.79")&gt;</var>
+<status status="PASS" start="2025-11-27T15:02:08.595390" elapsed="3.386868"/>
+</iter>
+<iter>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${link}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-11-27T15:02:11.982645" elapsed="0.288913"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:02:12.272087" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2f26f945b9f66153b36f4972cc204df7", element="f.83DC0B7DA85A5C8BCCD0F0C31B07434D.d.EB5C813B738D2E409D6EA9D7C2E43C06.e.80")&gt;'.</msg>
+<arg>${link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-27T15:02:12.271794" elapsed="0.943236"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-27T15:02:14.216174" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-27T15:02:13.215422" elapsed="1.000934"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-11-27T15:02:14.216574" elapsed="5.278666"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-27T15:02:19.495477" elapsed="0.014276"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:02:19.510280" level="INFO">Clicking element 'xpath=//button[@id='button-cart']'.</msg>
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-27T15:02:19.509984" elapsed="0.051586"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-27T15:02:20.562352" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-27T15:02:19.561796" elapsed="1.000723"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-11-27T15:02:20.562732" elapsed="0.013711"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PRODUCT_CARD_LINKS}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-27T15:02:20.576665" elapsed="0.008875"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:02:20.592862" level="INFO">${links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2f26f945b9f66153b36f4972cc204df7", element="f.83DC0B7DA85A5C8BCCD0F0C31B07434D.d.EB5C813B738D2E409D6EA9D7C2E43C06.e.78")&gt;, &lt;selenium.webdriv...</msg>
+<var>${links}</var>
+<arg>${PRODUCT_CARD_LINKS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-27T15:02:20.585766" elapsed="0.007153"/>
+</kw>
+<var name="${link}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f26f945b9f66153b36f4972cc204df7", element="f.83DC0B7DA85A5C8BCCD0F0C31B07434D.d.EB5C813B738D2E409D6EA9D7C2E43C06.e.80")&gt;</var>
+<status status="PASS" start="2025-11-27T15:02:11.982499" elapsed="8.610507"/>
+</iter>
+<iter>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${link}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-11-27T15:02:20.593352" elapsed="5.283653"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:02:25.877525" level="INFO">Clicking element '&lt;selenium.webdriver.remote.webelement.WebElement (session="2f26f945b9f66153b36f4972cc204df7", element="f.83DC0B7DA85A5C8BCCD0F0C31B07434D.d.EB5C813B738D2E409D6EA9D7C2E43C06.e.81")&gt;'.</msg>
+<arg>${link}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-27T15:02:25.877231" elapsed="1.186760"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-27T15:02:28.064712" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-27T15:02:27.064211" elapsed="1.000661"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-11-27T15:02:28.065094" elapsed="5.290447"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART_BTN}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-27T15:02:33.355771" elapsed="0.014155"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:02:33.370432" level="INFO">Clicking element 'xpath=//button[@id='button-cart']'.</msg>
+<arg>${ADD_TO_CART_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-27T15:02:33.370150" elapsed="0.048814"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-11-27T15:02:34.419648" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-11-27T15:02:33.419181" elapsed="1.000630"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2025-11-27T15:02:34.420027" elapsed="0.013421"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${PRODUCT_CARD_LINKS}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-11-27T15:02:34.433678" elapsed="0.008309"/>
+</kw>
+<kw name="Get WebElements" owner="SeleniumLibrary">
+<msg time="2025-11-27T15:02:34.449337" level="INFO">${links} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="2f26f945b9f66153b36f4972cc204df7", element="f.83DC0B7DA85A5C8BCCD0F0C31B07434D.d.EB5C813B738D2E409D6EA9D7C2E43C06.e.78")&gt;, &lt;selenium.webdriv...</msg>
+<var>${links}</var>
+<arg>${PRODUCT_CARD_LINKS}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<status status="PASS" start="2025-11-27T15:02:34.442205" elapsed="0.007194"/>
+</kw>
+<var name="${link}">&lt;selenium.webdriver.remote.webelement.WebElement (session="2f26f945b9f66153b36f4972cc204df7", element="f.83DC0B7DA85A5C8BCCD0F0C31B07434D.d.EB5C813B738D2E409D6EA9D7C2E43C06.e.81")&gt;</var>
+<status status="PASS" start="2025-11-27T15:02:20.593222" elapsed="13.856268"/>
+</iter>
+<var>${link}</var>
+<value>@{links}</value>
+<status status="PASS" start="2025-11-27T15:02:04.122737" elapsed="30.326840"/>
+</for>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-27T15:02:34.449930" elapsed="2.166096"/>
+</kw>
+<tag>cart</tag>
+<status status="PASS" start="2025-11-27T15:01:58.881266" elapsed="37.735176"/>
+</test>
+<status status="PASS" start="2025-11-27T15:01:58.557881" elapsed="38.059500"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">cart</stat>
+</tag>
+<suite>
+<stat name="Test" id="s1" pass="1" fail="0" skip="0">Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
