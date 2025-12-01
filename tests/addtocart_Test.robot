@@ -1,15 +1,21 @@
 *** Settings ***
-Library         SeleniumLibrary
-Library         DataDriver    file=../data/product_names.xlsx    sheet_name=products
-Resource        ../pages/addtocart_Pages.robot
-Suite Setup     Open Home Page
-Suite Teardown  Close All Browsers
-Test Template   Add Product Template
+Library    SeleniumLibrary
+Resource   ../pages/addtocart_Pages.robot
 
 *** Test Cases ***
-Add Product Test    ${product_name}
+Click Each Product And Verify Cart
+    Open Home Page
 
-*** Keywords ***
-Add Product Template
-    [Arguments]    ${product_name}
-    Search And Add Product ToCart    ${product_name}
+    ${links}=    Get All Product Links
+
+    FOR    ${product}    IN    @{links}
+        Open Product    ${product}
+
+        Add Product To Cart
+        Verify Product In Cart
+
+        Return To Home Page
+        ${links}=    Get All Product Links
+    END
+
+    Close Browser
